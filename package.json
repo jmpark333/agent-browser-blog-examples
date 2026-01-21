@@ -1,0 +1,22 @@
+{
+  "name": "agent-browser-blog-examples",
+  "version": "1.0.0",
+  "description": "agent-browser 웹 스크래핑 봇 예제 및 블로그",
+  "main": "examples/scraper-bot.js",
+  "scripts": {
+    "scrape": "node examples/scraper-bot.js",
+    "ai-scrape": "node examples/ai-scraper-bot.js",
+    "bash-scrape": "chmod +x examples/web-scraper.sh && ./examples/web-scraper.sh"
+  },
+  "keywords": [
+    "agent-browser",
+    "web-scraping",
+    "ai",
+    "automation",
+    "headless-browser"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

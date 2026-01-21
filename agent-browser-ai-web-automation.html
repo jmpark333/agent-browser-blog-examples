@@ -1,0 +1,708 @@
+<style>
+.concept-block {
+    background-color: #f0f7ff;
+    border-left: 4px solid #2196F3;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+.performance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+}
+.performance-table th,
+.performance-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+.performance-table th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: bold;
+}
+.performance-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.performance-table tr:hover {
+    background-color: #f0f7ff;
+}
+.info {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+.warning {
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3545;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+.code-block {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 15px 0;
+    position: relative;
+}
+.code-block pre {
+    margin: 0;
+    padding: 20px;
+    overflow-x: auto;
+}
+.code-block code {
+    color: #d4d4d4;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+#buy-me-a-coffee-container {
+    text-align: center;
+    margin: 20px auto;
+}
+.ai-tech {
+    background-color: #e6f3ff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #0066cc;
+}
+</style>
+
+<p data-ke-size="size16">안녕하세요! 오늘은 <b>Vercel Labs</b>에서 공개한 <span class="ai-tech">agent-browser</span>에 대해 알아보겠습니다. agent-browser는 <b>AI 에이전트를 위한 헤드리스 브라우저 자동화 CLI 도구</b>로, <b>Rust</b>로 작성된 빠른 네이티브 바이너리와 <b>Node.js</b> 백엔드를 결합하여 뛰어난 성능을 제공합니다. 특히 <b>AI 에이전트가 웹페이지를 이해하고 상호작용할 수 있도록 설계</b>되었으며, <b>스냅샷 기능으로 페이지 구조를 분석하고 참조(Ref)를 통해 요소를 정확하게 조작</b>할 수 있습니다. 이번 글에서는 agent-browser의 <b>주요 특징, 설치 방법, 실전 활용 예제</b>를 살펴보고, <b>사용자 지정 웹사이트에서 정보를 긁어서 정리하는 봇</b>을 직접 만들어 보겠습니다.</p>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<div id="coupang-container">
+<script src="https://ads-partners.coupang.com/g.js"></script>
+<script>
+	new PartnersCoupang.G({"id":737079,"template":"carousel","trackingCode":"AF5389956","width":"700","height":"140","tsource":""});
+</script>
+</div>
+
+<p style="text-align: center;" data-ke-size="size14"><span style="color: #dddddd;">"이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."</span></p>
+
+<h2 id="what-is-agent-browser" data-ke-size="size23"><b>🌐 agent-browser란 무엇인가?</b></h2>
+
+<p data-ke-size="size16"><span class="ai-tech">agent-browser</span>는 <b>AI 에이전트가 웹 브라우저를 자동으로 제어할 수 있도록 설계된 헤드리스 브라우저 자동화 도구</b>입니다. 기존의 <b>Puppeteer</b>, <b>Playwright</b> 같은 도구들은 개발자가 코드를 작성하여 브라우저를 제어하지만, agent-browser는 <b>AI 에이전트가 직접 명령을 내려 브라우저를 조작</b>할 수 있도록 최적화되어 있습니다.</p>
+
+<div class="concept-block">
+<p data-ke-size="size16"><b>💡 핵심 개념: 헤드리스 브라우저란?</b><br />
+헤드리스 브라우저는 <b>화면(UI) 없이 실행되는 웹 브라우저</b>를 의미합니다. 마치 우리가 크롬을 사용하는 것처럼 웹페이지를 로드하고 클릭하지만, 눈에 보이는 창이 없이 백그라운드에서 실행됩니다. 이렇게 하면 <b>서버 환경에서도 브라우저 자동화가 가능</b>하며, 리소스 사용량도 줄어듭니다.</p>
+</div>
+
+<p data-ke-size="size16">agent-browser의 <b>가장 큰 특징</b>은 <b>스냅샷(Snapshot)</b> 기능입니다. 웹페이지를 불러온 후 스냅샷을 생성하면, 페이지의 모든 <b>대화형 요소(버튼, 입력창, 링크 등)</b>가 <b>고유 참조 ID(예: @e1, @e2)</b>와 함께 반환됩니다. AI 에이전트는 이 참조 ID를 사용하여 요소를 클릭하거나 텍스트를 입력할 수 있습니다. 이 방식은 <b>CSS 선택자나 XPath를 직접 작성하지 않아도 되므로 AI 에이전트가 훨씬 쉽고 정확하게 웹페이지를 조작</b>할 수 있습니다.</p>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<h2 id="key-features" data-ke-size="size23"><b>🚀 주요 특징 및 기능</b></h2>
+
+<p data-ke-size="size16">agent-browser는 AI 에이전트를 위한 브라우저 자동화 도구로서 다음과 같은 <b>강력한 기능</b>을 제공합니다.</p>
+
+<div class="info">
+<p data-ke-size="size16"><b>ℹ️ 정보: Rust + Node.js 하이브리드 아키텍처</b><br />
+agent-browser는 <b>Rust CLI</b>와 <b>Node.js Daemon</b>으로 구성됩니다. Rust CLI는 명령을 파싱하고 데몬과 통신하며, Node.js Daemon은 Playwright 브라우저 인스턴스를 관리합니다. 이 하이브리드 구조는 <b>Rust의 빠른 실행 속도</b>와 <b>Node.js의 브라우저 제어 기능</b>을 모두 활용하여 뛰어난 성능을 제공합니다.</p>
+</div>
+
+<table class="performance-table">
+<thead>
+<tr>
+<th><b>기능</b></th>
+<th><b>설명</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>🔍 스냅샷(Snapshot)</b></td>
+<td>웹페이지의 접근성 트리(Accessibility Tree)를 분석하여 대화형 요소와 고유 참조 ID를 반환</td>
+</tr>
+<tr>
+<td><b>🎯 참조 기반 조작(Ref-based Interaction)</b></td>
+<td>@e1, @e2 같은 참조 ID를 사용하여 요소를 정확하게 클릭, 입력, 추출</td>
+</tr>
+<tr>
+<td><b>⚡ 빠른 성능</b></td>
+<td>Rust 네이티브 바이너리로 빠른 명령 처리, 데몬이 브라우저를 유지하여 빠른 후속 작업</td>
+</tr>
+<tr>
+<td><b>🌐 다양한 선택자 지원</b></td>
+<td>Ref, CSS 선택자, Text, XPath, 시맨틱 로케이터(Role, Label, Test ID) 등 다양한 선택자 지원</td>
+</tr>
+<tr>
+<td><b>🔐 인증된 세션 지원</b></td>
+<td>HTTP 헤더를 통한 인증, 쿠키 및 스토리지 관리, 세션 격리</td>
+</tr>
+<tr>
+<td><b>📊 JSON 출력 모드</b></td>
+<td>--json 옵션으로 AI 에이전트가 쉽게 파싱할 수 있는 구조화된 출력 제공</td>
+</tr>
+<tr>
+<td><b>🖥️ CDP 모드</b></td>
+<td>Chrome DevTools Protocol을 통해 이미 실행 중인 브라우저에 연결 가능</td>
+</tr>
+<tr>
+<td><b>📡 스트리밍(Streaming)</b></td>
+<td>WebSocket을 통한 브라우저 뷰포트 스트리밍, "페어 브라우징" 지원</td>
+</tr>
+</tbody>
+</table>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<figure class="ad-wp" contenteditable="false" data-ke-type="revenue" data-ad-vendor="adsense" data-ad-id-pc="329667" data-ad-id-mobile="329670"></figure>
+
+<h2 id="installation" data-ke-size="size23"><b>📦 설치 방법</b></h2>
+
+<p data-ke-size="size16">agent-browser는 <b>npm</b>을 통해 전역으로 설치할 수 있습니다. 설치 후 별도로 <b>Chromium 브라우저</b>를 다운로드해야 합니다.</p>
+
+<h3 id="npm-install" data-ke-size="size20"><b>🔧 npm으로 설치 (권장)</b></h3>
+
+<div class="code-block">
+<pre class="bash"><code># npm으로 전역 설치
+npm install -g agent-browser
+
+# Chromium 브라우저 다운로드
+agent-browser install</code></pre>
+</div>
+
+<p data-ke-size="size16">Linux 사용자의 경우 시스템 종속성도 함께 설치해야 합니다.</p>
+
+<div class="code-block">
+<pre class="bash"><code># Linux 시스템 종속성 설치
+agent-browser install --with-deps</code></pre>
+</div>
+
+<h3 id="source-install" data-ke-size="size20"><b>🔧 소스에서 설치</b></h3>
+
+<p data-ke-size="size16">소스에서 직접 빌드하려면 <b>Rust</b>가 필요합니다.</p>
+
+<div class="code-block">
+<pre class="bash"><code># 레포지토리 복제
+git clone https://github.com/vercel-labs/agent-browser
+cd agent-browser
+
+# 종속성 설치
+pnpm install
+
+# 빌드
+pnpm build
+
+# 네이티브 바이너리 빌드 (Rust 필요)
+pnpm build:native
+
+# 전역 설치
+pnpm link --global
+
+# Chromium 다운로드
+agent-browser install</code></pre>
+</div>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<h2 id="quick-start" data-ke-size="size23"><b>⚡ 빠른 시작</b></h2>
+
+<p data-ke-size="size16">agent-browser의 기본 사용법을 알아보겠습니다. 다음은 <b>웹페이지를 열고 스냅샷을 생성한 후, 요소를 클릭하고 텍스트를 추출</b>하는 간단한 예제입니다.</p>
+
+<div class="code-block">
+<pre class="bash"><code># 웹페이지 열기
+agent-browser open example.com
+
+# 스냅샷 생성 (대화형 요소와 참조 ID 반환)
+agent-browser snapshot
+
+# 출력 예시:
+# - heading "Example Domain" [ref=e1] [level=1]
+# - link "More information..." [ref=e2]
+
+# 참조 ID를 사용하여 요소 클릭
+agent-browser click @e2
+
+# 텍스트 추출
+agent-browser get text @e1
+
+# 스크린샷 저장
+agent-browser screenshot page.png
+
+# 브라우저 닫기
+agent-browser close</code></pre>
+</div>
+
+<div class="warning">
+<p data-ke-size="size16"><b>⚠️ 주의: AI 에이전트를 위한 최적의 워크플로우</b><br />
+agent-browser는 <b>AI 에이전트가 명령을 실행하기 전에 스냅샷을 먼저 생성</b>하고, 반환된 참조 ID를 사용하여 요소를 조작하는 방식을 권장합니다. 이 방식은 <b>DOM을 다시 쿼리하지 않아도 되므로 빠르고 결정적(Deterministic)</b>입니다.</p>
+</div>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<h2 id="web-scraping-bot" data-ke-size="size23"><b>🤖 웹 스크래핑 봇 만들기 예제</b></h2>
+
+<p data-ke-size="size16">이제 agent-browser를 사용하여 <b>사용자 지정 웹사이트에서 정보를 긁어서 정리하는 봇</b>을 만들어 보겠습니다. 이 예제에서는 <b>AI 뉴스 사이트에서 최신 기사 제목과 링크를 수집</b>하는 간단한 스크래핑 봇을 구현하겠습니다.</p>
+
+<div class="concept-block">
+<p data-ke-size="size16"><b>💡 스크래핑 전 고려사항</b><br />
+웹 스크래핑을 하기 전에 <b>robots.txt</b>를 확인하고, <b>서버에 과도한 부하를 주지 않도록 적절한 딜레이</b>를 설정해야 합니다. 또한 <b>저작권과 서비스 약관</b>을 준수하여 합법적인 목적으로만 사용해야 합니다.</p>
+</div>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<h3 id="example-1-basic-scraping" data-ke-size="size20"><b>📝 예제 1: 기본 스크래핑 스크립트</b></h3>
+
+<p data-ke-size="size16">먼저 Bash 스크립트를 사용하여 간단한 스크래핑 봇을 만들어 보겠습니다.</p>
+
+<div class="code-block">
+<pre class="bash"><code>#!/bin/bash
+
+# web-scraper.sh - agent-browser를 사용한 웹 스크래핑 봇
+
+# 타겟 URL (사용자가 지정)
+TARGET_URL="https://example-news-site.com"
+
+# 1. 웹페이지 열기
+agent-browser open "$TARGET_URL"
+
+# 2. 페이지 로딩 대기
+agent-browser wait --load networkidle
+
+# 3. 스냅샷 생성 (JSON 모드)
+SNAPSHOT=$(agent-browser snapshot --json)
+
+echo "스냅샷 생성 완료:"
+echo "$SNAPSHOT" | jq .
+
+# 4. 기사 링크 추출 (시맨틱 로케이터 사용)
+# "article" 역할을 가진 링크 찾기
+agent-browser find role link text --json > articles.txt
+
+# 5. 각 기사 제목과 URL 추출
+grep -oP '"text":"[^"]+"|"url":"[^"]+' articles.txt | paste - - | while read -r line; do
+    TITLE=$(echo "$line" | grep -oP '"text":"\K[^"]+')
+    URL=$(echo "$line" | grep -oP '"url":"\K[^"]+')
+    echo "제목: $TITLE"
+    echo "URL: $URL"
+    echo "---"
+done > scraped_articles.txt
+
+# 6. 브라우저 닫기
+agent-browser close
+
+echo "스크래핑 완료! 결과는 scraped_articles.txt를 확인하세요."</code></pre>
+</div>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<h3 id="example-2-nodejs-bot" data-ke-size="size20"><b>📝 예제 2: Node.js 기반 AI 봇</b></h3>
+
+<p data-ke-size="size16">이번에는 <b>Node.js</b>와 <span class="ai-tech">agent-browser</span>의 <b>프로그래매틱 API</b>를 사용하여 더 정교한 스크래핑 봇을 만들어 보겠습니다.</p>
+
+<div class="code-block">
+<pre class="javascript"><code>// scraper-bot.js
+const { spawn } = require('child_process');
+const fs = require('fs').promises;
+const path = require('path');
+
+class AgentBrowserBot {
+    constructor() {
+        this.browser = null;
+        this.results = [];
+    }
+
+    // 명령 실행 헬퍼 함수
+    async runCommand(cmd, args = []) {
+        return new Promise((resolve, reject) => {
+            const process = spawn('agent-browser', [cmd, ...args], {
+                stdio: ['pipe', 'pipe', 'pipe']
+            });
+
+            let stdout = '';
+            let stderr = '';
+
+            process.stdout.on('data', (data) => {
+                stdout += data.toString();
+            });
+
+            process.stderr.on('data', (data) => {
+                stderr += data.toString();
+            });
+
+            process.on('close', (code) => {
+                if (code === 0) {
+                    resolve(stdout);
+                } else {
+                    reject(new Error(`Command failed: ${stderr}`));
+                }
+            });
+        });
+    }
+
+    // 웹페이지 열기
+    async open(url) {
+        console.log(`🌐 Opening: ${url}`);
+        await this.runCommand('open', [url]);
+        // 페이지 로딩 대기
+        await this.runCommand('wait', ['--load', 'networkidle']);
+    }
+
+    // 스냅샷 생성
+    async getSnapshot() {
+        console.log('📸 Taking snapshot...');
+        const snapshot = await this.runCommand('snapshot', ['--json']);
+        return JSON.parse(snapshot);
+    }
+
+    // 요소 클릭
+    async click(ref) {
+        console.log(`🖱️ Clicking: ${ref}`);
+        await this.runCommand('click', [ref]);
+    }
+
+    // 텍스트 입력
+    async fill(ref, text) {
+        console.log(`⌨️ Filling ${ref} with: ${text}`);
+        await this.runCommand('fill', [ref, text]);
+    }
+
+    // 텍스트 추출
+    async getText(ref) {
+        const text = await this.runCommand('get', ['text', ref]);
+        return text.trim();
+    }
+
+    // 기사 스크래핑
+    async scrapeArticles(url) {
+        await this.open(url);
+
+        // 스냅샷 가져오기
+        const snapshot = await this.getSnapshot();
+
+        // 기사 제목 추출 (h2, h3 태그)
+        const articles = [];
+        for (const [ref, element] of Object.entries(snapshot.data.refs || {})) {
+            if (element.role === 'heading' || element.role === 'link') {
+                const title = element.name || 'Unknown';
+                articles.push({ ref, title });
+            }
+        }
+
+        // 각 기사 상세 내용 추출
+        for (const article of articles.slice(0, 5)) {  // 상위 5개만
+            try {
+                const text = await this.getText(`@${article.ref}`);
+                this.results.push({
+                    title: article.title,
+                    excerpt: text.substring(0, 200) + '...'
+                });
+            } catch (error) {
+                console.log(`⚠️ Failed to extract ${article.ref}:`, error.message);
+            }
+        }
+
+        await this.close();
+        return this.results;
+    }
+
+    // 브라우저 닫기
+    async close() {
+        console.log('🔒 Closing browser...');
+        await this.runCommand('close');
+    }
+
+    // 결과 저장
+    async saveResults(filename) {
+        const content = this.results.map(r =>
+            `제목: ${r.title}\n내용: ${r.excerpt}\n---`
+        ).join('\n');
+
+        await fs.writeFile(filename, content, 'utf8');
+        console.log(`💾 Results saved to: ${filename}`);
+    }
+}
+
+// 사용 예시
+(async () => {
+    const bot = new AgentBrowserBot();
+
+    try {
+        // 스크래핑 실행
+        const results = await bot.scrapeArticles('https://example-news-site.com');
+
+        // 결과 출력
+        console.log('\n📊 Scraping Results:');
+        console.log(JSON.stringify(results, null, 2));
+
+        // 파일로 저장
+        await bot.saveResults('scraped_articles.txt');
+    } catch (error) {
+        console.error('❌ Error:', error.message);
+    }
+})();</code></pre>
+</div>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<h3 id="example-3-ai-integrated" data-ke-size="size20"><b>📝 예제 3: AI와 통합한 스마트 스크래핑</b></h3>
+
+<p data-ke-size="size16">이번에는 <b>Ollama</b>와 같은 <b>로컬 LLM</b>과 연동하여, 웹페이지 내용을 <b>요약하고 분석</b>하는 스마트 스크래핑 봇을 만들어 보겠습니다.</p>
+
+<div class="code-block">
+<pre class="javascript"><code>// ai-scraper-bot.js
+const { spawn } = require('child_process');
+
+class AIScraperBot {
+    constructor() {
+        this.ollamaModel = 'deepseek-r1:1.5b';  // 로컬 LLM 모델
+    }
+
+    // Ollama로 텍스트 요약
+    async summarizeWithAI(text) {
+        return new Promise((resolve, reject) => {
+            const ollama = spawn('ollama', ['run', this.ollamaModel, text]);
+
+            let output = '';
+            ollama.stdout.on('data', (data) => {
+                output += data.toString();
+            });
+
+            ollama.on('close', () => {
+                resolve(output.trim());
+            });
+
+            ollama.on('error', reject);
+        });
+    }
+
+    // 웹페이지 내용 추출
+    async extractPageContent(url) {
+        // agent-browser로 페이지 열기
+        await this.runAgentCommand('open', [url]);
+        await this.runAgentCommand('wait', ['--load', 'networkidle']);
+
+        // 스냅샷 생성
+        const snapshot = await this.runAgentCommand('snapshot', ['--json']);
+        const data = JSON.parse(snapshot);
+
+        // 본문 내용 추출
+        let content = '';
+        for (const [ref, element] of Object.entries(data.data.refs || {})) {
+            if (element.role === 'article' || element.role === 'paragraph') {
+                const text = await this.runAgentCommand('get', ['text', `@${ref}`]);
+                content += text + '\n\n';
+            }
+        }
+
+        await this.runAgentCommand('close');
+        return content;
+    }
+
+    // agent-browser 명령 실행
+    async runAgentCommand(cmd, args = []) {
+        return new Promise((resolve, reject) => {
+            const process = spawn('agent-browser', [cmd, ...args]);
+            let output = '';
+
+            process.stdout.on('data', (data) => {
+                output += data.toString();
+            });
+
+            process.on('close', (code) => {
+                code === 0 ? resolve(output) : reject(new Error(output));
+            });
+        });
+    }
+
+    // AI 스크래핑 실행
+    async scrapeWithAI(url) {
+        console.log(`🤖 AI 스크래핑 시작: ${url}`);
+
+        // 1. 웹페이지 내용 추출
+        const content = await this.extractPageContent(url);
+
+        // 2. AI로 요약
+        console.log('📝 AI 요약 중...');
+        const prompt = `다음 웹페이지 내용을 3줄로 요약해주세요:\n\n${content.substring(0, 3000)}`;
+        const summary = await this.summarizeWithAI(prompt);
+
+        return {
+            url,
+            content: content.substring(0, 500),
+            summary
+        };
+    }
+}
+
+// 사용 예시
+(async () => {
+    const bot = new AIScraperBot();
+
+    const result = await bot.scrapeWithAI('https://example.com/article');
+
+    console.log('\n📊 스크래핑 결과:');
+    console.log('URL:', result.url);
+    console.log('\n원문 내용:');
+    console.log(result.content);
+    console.log('\nAI 요약:');
+    console.log(result.summary);
+})();</code></pre>
+</div>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<div id="coupang-container-bottom">
+<script src="https://ads-partners.coupang.com/g.js"></script>
+<script>
+	new PartnersCoupang.G({"id":737079,"template":"carousel","trackingCode":"AF5389956","width":"700","height":"140","tsource":""});
+</script>
+</div>
+
+<p style="text-align: center;" data-ke-size="size14"><span style="color: #dddddd;">"이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."</span></p>
+
+<h2 id="comparison" data-ke-size="size23"><b>📊 기존 도구와 비교</b></h2>
+
+<p data-ke-size="size16">agent-browser는 <b>Puppeteer</b>, <b>Playwright</b>, <b>Selenium</b> 같은 기존 브라우저 자동화 도구와 비교했을 때 <b>AI 에이전트를 위한 특별한 장점</b>이 있습니다.</p>
+
+<table class="performance-table">
+<thead>
+<tr>
+<th><b>특징</b></th>
+<th><b>agent-browser</b></th>
+<th><b>Puppeteer/Playwright</b></th>
+<th><b>Selenium</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>🎯 타겟</b></td>
+<td><b>AI 에이전트</b> 최적화</td>
+<td>개발자 중심</td>
+<td>테스트 자동화 중심</td>
+</tr>
+<tr>
+<td><b>📸 스냅샷</b></td>
+<td><b>접근성 트리 + 참조 ID</b></td>
+<td>직접 선택자 작성</td>
+<td>직접 선택자 작성</td>
+</tr>
+<tr>
+<td><b>⚡ 성능</b></td>
+<td>Rust CLI = <b>매우 빠름</b></td>
+<td>빠름</td>
+<td>상대적으로 느림</td>
+</tr>
+<tr>
+<td><b>🤖 AI 친화적</b></td>
+<td><b>JSON 출력, Ref 기반 조작</b></td>
+<td>프로그래밍 필요</td>
+<td>프로그래밍 필요</td>
+</tr>
+<tr>
+<td><b>🔧 설치</b></td>
+<td><b>npm 한 줄</b></td>
+<td>npm 설치 필요</td>
+<td>WebDriver 설정 필요</td>
+</tr>
+<tr>
+<td><b>🌐 플랫폼</b></td>
+<td><b>크로스 플랫폼</b> (Rust)</td>
+<td>Node.js 기반</td>
+<td>다양한 언어 지원</td>
+</tr>
+<tr>
+<td><b>💰 가격</b></td>
+<td><b>무료 오픈소스</b></td>
+<td>무료 오픈소스</td>
+<td>무료 오픈소스</td>
+</tr>
+</tbody>
+</table>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<h2 id="advanced-features" data-ke-size="size23"><b>🔧 고급 기능</b></h2>
+
+<p data-ke-size="size16">agent-browser는 기본적인 브라우저 조작 외에도 <b>다양한 고급 기능</b>을 제공합니다.</p>
+
+<h3 id="session-management" data-ke-size="size20"><b>🔐 세션 관리</b></h3>
+
+<p data-ke-size="size16"><b>세션(Session)</b>을 사용하면 <b>여러 개의 독립된 브라우저 인스턴스</b>를 실행할 수 있습니다. 각 세션은 <b>별도의 쿠키, 스토리지, 인증 상태</b>를 가집니다.</p>
+
+<div class="code-block">
+<pre class="bash"><code># 다른 세션으로 브라우저 실행
+agent-browser --session agent1 open site-a.com
+agent-browser --session agent2 open site-b.com
+
+# 환경 변수로 세션 지정
+AGENT_BROWSER_SESSION=agent1 agent-browser click "#btn"
+
+# 활성 세션 목록 확인
+agent-browser session list</code></pre>
+</div>
+
+<h3 id="auth-headers" data-ke-size="size20"><b>🔑 인증 헤더</b></h3>
+
+<p data-ke-size="size16"><b>--headers</b> 옵션을 사용하여 <b>특정 출처(Origin)에만 HTTP 헤더를 전송</b>할 수 있습니다. 이를 통해 <b>로그인 흐름 없이 인증된 상태로 웹사이트에 접근</b>할 수 있습니다.</p>
+
+<div class="code-block">
+<pre class="bash"><code# API 엔드포인트에 인증 헤더 전송
+agent-browser open api.example.com --headers '{"Authorization": "Bearer &lt;token&gt;"}'
+
+# 다른 도메인으로 이동하면 헤더가 전송되지 않음 (안전!)
+agent-browser open other-site.com</code></pre>
+</div>
+
+<h3 id="streaming" data-ke-size="size20"><b>📡 브라우저 스트리밍</b></h3>
+
+<p data-ke-size="size16"><b>AGENT_BROWSER_STREAM_PORT</b> 환경 변수를 설정하면 <b>WebSocket을 통해 브라우저 뷰포트를 실시간으로 스트리밍</b>할 수 있습니다. 이 기능은 <b>"페어 브라우징"</b>에 유용하며, 사람이 AI 에이전트의 작업을 실시간으로 모니터링할 수 있습니다.</p>
+
+<div class="code-block">
+<pre class="bash"><code># 스트리밍 시작
+AGENT_BROWSER_STREAM_PORT=9223 agent-browser open example.com
+
+# WebSocket 클라이언트로 ws://localhost:9223 연결
+# 실시간으로 프레임 수신 및 입력 이벤트 전송</code></pre>
+</div>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<h2 id="conclusion" data-ke-size="size23"><b>🎯 맺음말</b></h2>
+
+<p data-ke-size="size16">오늘은 Vercel Labs의 <span class="ai-tech">agent-browser</span>에 대해 알아보았습니다. agent-browser는 <b>AI 에이전트를 위한 헤드리스 브라우저 자동화 도구</b>로, <b>스냅샷과 참조 ID 기반 조작</b>을 통해 AI가 웹페이지를 쉽게 이해하고 제어할 수 있게 해줍니다. 특히 <b>Rust CLI의 빠른 성능</b>과 <b>Node.js Daemon의 유연성</b>, 그리고 <b>AI 친화적인 설계</b>로 인해 AI 에이전트 개발에 최적화되어 있습니다.</p>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<p data-ke-size="size16"><b>로컬 환경에서 무료로 사용</b>할 수 있으며, <b>별도의 API 비용 없이 나만의 웹 스크래핑 봇</b>을 만들 수 있습니다. 다만, 직접 설치하고 운영하는 것이 부담스러운 분들은 <b>Cloudflare Workers</b>, <b>Vercel Edge Functions</b> 같은 <b>서버리스 플랫폼</b>을 활용하거나, <b>Lightning AI</b> 같은 <b>무료 GPU 클라우드</b>를 고려해 볼 수 있습니다. 선택은 본인의 <b>사용 환경과 기술적 역량</b>에 따라 달라질 수 있습니다.</p>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<p data-ke-size="size16">여러분도 agent-browser를 사용해서 나만의 AI 웹 자동화 봇을 만들어 보시길 추천드립니다. 직접 설치가 어려운 경우 <b>Docker</b>를 활용하거나 <b>GitHub Codespaces</b> 같은 클라우드 개발 환경을 사용해 보세요. 자세한 내용은 아래 링크를 참고하세요.</p>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li><a href="https://github.com/vercel-labs/agent-browser" target="_blank" rel="noopener">agent-browser GitHub 레포지토리</a></li>
+<li><a href="https://www.npmjs.com/package/agent-browser" target="_blank" rel="noopener">agent-browser npm 패키지</a></li>
+<li><a href="https://fornewchallenge.tistory.com/entry/%E2%9A%A1%EF%B8%8F%F0%9F%86%93Lightning-AI-%EB%AC%B4%EB%A3%8C-GPU-%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EA%B8%B0%EB%B0%98-AI-%EA%B0%9C%EB%B0%9C-%ED%94%8C%EB%9E%AB%ED%8F%BC-Ollama-%EA%B0%80%EC%9D%B4%EB%93%9C" target="_blank" rel="noopener">⚡️🆓Lightning AI: 무료 GPU 클라우드 기반 AI 개발 플랫폼 Ollama 가이드</a></li>
+</ul>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<div id="buy-me-a-coffee-container">
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="jmpark333" data-color="#FFDD00" data-emoji="🍺" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+</div>
+
+<p data-ke-size="size16">&nbsp;</p>
+
+<hr data-ke-style="style1" />
+<h2 id="sources" data-ke-size="size23"><b>📚 참고 문헌 및 출처</b></h2>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li>Vercel Labs. (2025). <i>agent-browser: Headless browser automation CLI for AI agents</i>. Retrieved from <a href="https://github.com/vercel-labs/agent-browser" target="_blank" rel="noopener">https://github.com/vercel-labs/agent-browser</a></li>
+<li>Playwright. (2025). <i>Playwright Documentation</i>. Retrieved from <a href="https://playwright.dev" target="_blank" rel="noopener">https://playwright.dev</a></li>
+<li>Vercel. (2025). <i>Vercel AI SDK Documentation</i>. Retrieved from <a href="https://sdk.vercel.ai" target="_blank" rel="noopener">https://sdk.vercel.ai</a></li>
+</ul>
+<p data-ke-size="size16">&nbsp;</p>
+
+<p data-ke-size="size16" style="color: #999999;">키워드: agent-browser, AI 웹 자동화, 헤드리스 브라우저, 웹 스크래핑, Vercel Labs, 무료 오픈소스<br />
+Keywords: agent-browser, AI web automation, headless browser, web scraping, Vercel Labs, free open-source</p>

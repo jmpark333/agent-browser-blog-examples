@@ -1,0 +1,562 @@
+- document:
+  - navigation:
+    - link "주요서비스 바로가기" [ref=e1]:
+      - /url: "#user-menu"
+    - link "본문 바로가기" [ref=e2]:
+      - /url: "#user-container"
+    - link "매체정보 바로가기" [ref=e3]:
+      - /url: "#user-footer"
+    - link "로그인 바로가기" [ref=e4]:
+      - /url: "#userLogin"
+    - link "기사검색 바로가기" [ref=e5]:
+      - /url: "#userSearch"
+  - banner:
+    - article:
+      - heading "www.aitimes.com" [ref=e6] [level=1]:
+        - link [ref=e7]:
+          - /url: https://www.aitimes.com
+          - listbox "slide" [ref=e8]:
+            - option "toplogo3" [ref=e9]:
+              - img "toplogo3"
+        - paragraph: www.aitimes.com
+      - list:
+        - listitem:
+          - link "유플러스 제호" [ref=e10]:
+            - /url: https://www.youtube.com/watch?v=gpP22dWiU_M
+            - img "유플러스 제호"
+      - button "뒤로" [ref=e11]
+      - button "멈춤" [ref=e12]
+      - button "앞으로" [ref=e13]
+      - text: "발행일: 2026-01-21 16:08 (수)"
+      - link "로그인" [ref=e14]:
+        - /url: https://www.aitimes.com/member/login.html
+      - text: 
+      - link " 뉴스레터 신청" [ref=e15]:
+        - /url: https://www.aitimes.com/com/letter.html
+    - navigation:
+      - list:
+        - listitem:
+          - link "전체기사" [ref=e16]:
+            - /url: https://www.aitimes.com/news/articleList.html?view_type=sm
+        - listitem:
+          - link "AI산업" [ref=e17]:
+            - /url: https://www.aitimes.com/news/articleList.html?sc_multi_code=S2&view_type=sm
+        - listitem:
+          - link "AI기업" [ref=e18]:
+            - /url: https://www.aitimes.com/news/articleList.html?sc_sub_section_code=S2N51&view_type=sm
+        - listitem:
+          - link "AI기술" [ref=e19]:
+            - /url: https://www.aitimes.com/news/articleList.html?sc_section_code=S1N24&view_type=sm
+        - listitem:
+          - link "Society" [ref=e20]:
+            - /url: https://www.aitimes.com/news/articleList.html?sc_section_code=S1N31&view_type=sm
+        - listitem:
+          - link "Future Energy" [ref=e21]:
+            - /url: https://www.aitimes.com/news/articleList.html?sc_section_code=S1N34&view_type=sm
+      - button "검색버튼" [ref=e22]: 
+      - button "전체메뉴" [ref=e23]: 
+    - navigation:
+      - button "close" [ref=e24]: 
+      - link "AI타임스" [ref=e25]:
+        - /url: https://www.aitimes.com
+        - img "AI타임스"
+      - list:
+        - listitem:
+          - link "전체기사" [ref=e26] [nth=1]:
+            - /url: https://www.aitimes.com/news/articleList.html?view_type=sm
+        - listitem:
+          - link "정책" [ref=e27]:
+            - /url: https://www.aitimes.com/news/articleList.html?sc_section_code=S1N1&view_type=sm
+        - listitem:
+          - link "AI산업 " [ref=e28]:
+            - /url: "#sidenav1"
+        - listitem:
+          - link "AI기술 " [ref=e29]:
+            - /url: "#sidenav2"
+        - listitem:
+          - link "Art & Living " [ref=e30]:
+            - /url: "#sidenav3"
+        - listitem:
+          - link "교육 " [ref=e31]:
+            - /url: "#sidenav4"
+        - listitem:
+          - link "인물 " [ref=e32]:
+            - /url: "#sidenav5"
+        - listitem:
+          - link "오피니언 " [ref=e33]:
+            - /url: "#sidenav6"
+        - listitem:
+          - link "포커스 " [ref=e34]:
+            - /url: "#sidenav7"
+        - listitem:
+          - link "이벤트 " [ref=e35]:
+            - /url: "#sidenav8"
+        - listitem:
+          - link "스페셜 리포트 " [ref=e36]:
+            - /url: "#sidenav9"
+        - listitem:
+          - link "Global" [ref=e37]:
+            - /url: https://www.aitimes.com/news/articleList.html?sc_section_code=S1N13&view_type=sm
+        - listitem:
+          - link "Feature" [ref=e38]:
+            - /url: https://www.aitimes.com/news/articleList.html?sc_section_code=S1N35&view_type=sm
+        - listitem:
+          - link "Society " [ref=e39]:
+            - /url: "#sidenav12"
+        - listitem:
+          - link "Future Energy" [ref=e40] [nth=1]:
+            - /url: https://www.aitimes.com/news/articleList.html?sc_section_code=S1N34&view_type=sm
+        - listitem:
+          - link "AI WEBTOON" [ref=e41]:
+            - /url: https://www.aitimes.com/news/articleList.html?sc_section_code=S1N36&view_type=sm
+      - list:
+        - listitem:
+          - link "기사제보" [ref=e42]:
+            - /url: https://www.aitimes.com/com/jb.html
+        - listitem:
+          - link "로그인" [ref=e43] [nth=1]:
+            - /url: https://www.aitimes.com/member/login.html
+        - listitem:
+          - link "회원가입" [ref=e44]:
+            - /url: https://www.aitimes.com/member/index.html
+      - text: SNS
+      - link "instagram" [ref=e45]:
+        - /url: https://www.instagram.com/aitimes_news/
+        - text: 
+      - link "facebook" [ref=e46]:
+        - /url: https://www.facebook.com/aitimes.co.kr/
+        - text: 
+      - link "twitter" [ref=e47]:
+        - /url: https://x.com/AITimes_News
+        - text: 
+      - link "kakaoch" [ref=e48]:
+        - /url: https://pf.kakao.com/_xgtfxaxb
+        - text: 
+      - link "youtube" [ref=e49]:
+        - /url: https://www.youtube.com/channel/UCxKaTFMQcCg4kA_oHLGbNxQ
+        - text: 
+  - main:
+    - article:
+      - link "코난테크놀로지, 에이전틱 AI 강화한 '추론 모델' 출시" [ref=e50]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205773
+        - img "코난테크놀로지, 에이전틱 AI 강화한 '추론 모델' 출시"
+      - link "코난테크놀로지, 에이전틱 AI 강화한 '추론 모델' 출시 코난테크놀로지(대표 김영섬)는 에이전틱 AI 기능을 대폭 강화한 신규 추론 모델을 출시했다고 21일 밝혔다.이번에 공개된 모델은 기존 추론 통합 대형언어모델(LLM) 'ENT-11..." [ref=e51]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205773
+        - heading "코난테크놀로지, 에이전틱 AI 강화한 '추론 모델' 출시" [ref=e52] [level=2]
+        - text: 코난테크놀로지(대표 김영섬)는 에이전틱 AI 기능을 대폭 강화한 신규 추론 모델을 출시했다고 21일 밝혔다.이번에 공개된 모델은 기존 추론 통합 대형언어모델(LLM) 'ENT-11...
+    - list:
+      - listitem:
+        - link "과기부 PC 메인" [ref=e53]:
+          - /url: https://aica-gj.kr/main.php
+          - img "과기부 PC 메인"
+    - button "뒤로" [ref=e54] [nth=1]
+    - button "멈춤" [ref=e55] [nth=1]
+    - button "앞으로" [ref=e56] [nth=1]
+    - article:
+      - strong: Headlines
+      - link "오픈AI, 챗GPT에 '나이 예측' 기능 도입...18세 미만 가려낸다" [ref=e57]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205774
+        - heading "오픈AI, 챗GPT에 '나이 예측' 기능 도입...18세 미만 가려낸다" [ref=e58] [level=2]
+      - link "오픈AI, 챗GPT에 '나이 예측' 기능 도입...18세 미만 가려낸다" [ref=e59] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205774
+        - img "오픈AI, 챗GPT에 '나이 예측' 기능 도입...18세 미만 가려낸다"
+      - link "팝업스튜디오, 클로드 코드 활용 AI 자동화 프레임워크 ‘비킷’ 출시" [ref=e60]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205793
+        - heading "팝업스튜디오, 클로드 코드 활용 AI 자동화 프레임워크 ‘비킷’ 출시" [ref=e61] [level=2]
+      - link "팝업스튜디오, 클로드 코드 활용 AI 자동화 프레임워크 ‘비킷’ 출시" [ref=e62] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205793
+        - img "팝업스튜디오, 클로드 코드 활용 AI 자동화 프레임워크 ‘비킷’ 출시"
+      - link "팔란티어, HD현대와 수억달러 규모 계약 체결" [ref=e63]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205776
+        - heading "팔란티어, HD현대와 수억달러 규모 계약 체결" [ref=e64] [level=2]
+      - link "팔란티어, HD현대와 수억달러 규모 계약 체결" [ref=e65] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205776
+        - img "팔란티어, HD현대와 수억달러 규모 계약 체결"
+      - link "저가형 요금제 ‘챗GPT고’의 한국 가격이 비싼 이유는" [ref=e66]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205772
+        - heading "저가형 요금제 ‘챗GPT고’의 한국 가격이 비싼 이유는" [ref=e67] [level=2]
+      - link "저가형 요금제 ‘챗GPT고’의 한국 가격이 비싼 이유는" [ref=e68] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205772
+        - img "저가형 요금제 ‘챗GPT고’의 한국 가격이 비싼 이유는"
+      - link "트릴리온랩스, 국가대표 AI 재도전...”프롬 스크래치 역량 입증할 것”" [ref=e69]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205751
+        - heading "트릴리온랩스, 국가대표 AI 재도전...”프롬 스크래치 역량 입증할 것”" [ref=e70] [level=2]
+      - link "트릴리온랩스, 국가대표 AI 재도전...”프롬 스크래치 역량 입증할 것”" [ref=e71] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205751
+        - img "트릴리온랩스, 국가대표 AI 재도전...”프롬 스크래치 역량 입증할 것”"
+      - link "구글, '제미나이' API 호출 2배로 증가...B2B에서도 약진하나" [ref=e72]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205748
+        - heading "구글, '제미나이' API 호출 2배로 증가...B2B에서도 약진하나" [ref=e73] [level=2]
+      - link "구글, '제미나이' API 호출 2배로 증가...B2B에서도 약진하나" [ref=e74] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205748
+        - img "구글, '제미나이' API 호출 2배로 증가...B2B에서도 약진하나"
+      - link "머스크 직속 '탤런트 엔지니어팀' 구성...\" [ref=e75]개발자가 개발자 직접 선발\"":
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205767
+        - heading "머스크 직속 '탤런트 엔지니어팀' 구성...\" [ref=e76]개발자가 개발자 직접 선발\"" [level=2]
+      - link "머스크 직속 '탤런트 엔지니어팀' 구성...\" [ref=e77] [nth=1]개발자가 개발자 직접 선발\"":
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205767
+        - img "머스크 직속 '탤런트 엔지니어팀' 구성...\"개발자가 개발자 직접 선발\""
+    - article:
+      - strong: Most Popular
+      - text: "1"
+      - link "오픈AI, ‘챗GPT 번역’ 출시...구글 번역에 도전" [ref=e78]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205654
+        - heading "오픈AI, ‘챗GPT 번역’ 출시...구글 번역에 도전" [ref=e79] [level=2]
+      - text: "2"
+      - link "구글, 55개 언어 번역 오픈 소스 sLM '트랜스레이트젬마' 출시" [ref=e80]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205650
+        - heading "구글, 55개 언어 번역 오픈 소스 sLM '트랜스레이트젬마' 출시" [ref=e81] [level=2]
+      - text: "3"
+      - link "테슬라, FSD를 구독제로… 한달에 이 가격?" [ref=e82]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205667
+        - heading "테슬라, FSD를 구독제로… 한달에 이 가격?" [ref=e83] [level=2]
+      - text: "4"
+      - 'link "[AI웹툰] 사랑하면그사람이된다 : 9화"':
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205689
+        - 'heading "[AI웹툰] 사랑하면그사람이된다 : 9화" [level=2]'
+      - text: "5"
+      - link "[1월19일] 오픈AI에 대한 강력한 경고...\" [ref=e84]IPO 실패하면 2027년 다른 기업에 인수될 것\"":
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205709
+        - heading "[1월19일] 오픈AI에 대한 강력한 경고...\" [ref=e85]IPO 실패하면 2027년 다른 기업에 인수될 것\"" [level=2]
+      - text: "6"
+      - link "허사비스의 다큐멘터리가 유튜브 '3억 조회'를 기록한 이유는" [ref=e86]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205722
+        - heading "허사비스의 다큐멘터리가 유튜브 '3억 조회'를 기록한 이유는" [ref=e87] [level=2]
+      - text: "7"
+      - link "AI 석학 조경현 교수 \" [ref=e88]국대 AI 기준 강화 반대...독자성 논란 아쉬워\"":
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205691
+        - heading "AI 석학 조경현 교수 \" [ref=e89]국대 AI 기준 강화 반대...독자성 논란 아쉬워\"" [level=2]
+      - text: "8"
+      - link "오픈AI \" [ref=e90]국내 리셀러 파트너는 삼성SDS 유일...LG CNS와는 성격 달라”":
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205637
+        - heading "오픈AI \" [ref=e91]국내 리셀러 파트너는 삼성SDS 유일...LG CNS와는 성격 달라”" [level=2]
+      - text: "9"
+      - link "바이브 코딩으로 높아진 눈...\" [ref=e92]스타트업은 이제 '미친 개발자' 원해\"":
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205700
+        - heading "바이브 코딩으로 높아진 눈...\" [ref=e93]스타트업은 이제 '미친 개발자' 원해\"" [level=2]
+      - text: "10"
+      - link "\" [ref=e94]AI 거품으로 모두 무너지지 않아...'AI 레퍼'가 가장 큰 피해 볼 것\"":
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205733
+        - heading "\" [ref=e95]AI 거품으로 모두 무너지지 않아...'AI 레퍼'가 가장 큰 피해 볼 것\"" [level=2]
+    - article:
+      - link "Latest News View All +" [ref=e96]:
+        - /url: https://www.aitimes.com/news/articleList.html?sc_section_code=S1N1&view_type=sm
+      - link "콕스웨이브, 오픈AI와 해커톤 개최...\" [ref=e97]엔터프라이즈 AI 솔루션 개발\"":
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205783
+        - img "콕스웨이브, 오픈AI와 해커톤 개최...\"엔터프라이즈 AI 솔루션 개발\""
+      - link "콕스웨이브, 오픈AI와 해커톤 개최...\" [ref=e98] [nth=1]엔터프라이즈 AI 솔루션 개발\"":
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205783
+        - heading "콕스웨이브, 오픈AI와 해커톤 개최...\" [ref=e99]엔터프라이즈 AI 솔루션 개발\"" [level=2]
+      - text: 콕스웨이브(대표 김주원)는 오픈AI와 공동으로 엔터프라이즈 AI 에이전트 솔루션을 개발하는 '멀티 에이전트 워크플로우 해커톤'을 개최했다고 21일 밝혔다.국내 AI 대기업과 스타트... AI 기업 2026-01-21
+      - link "달파, 키움증권 채팅 ‘AI 모니터링’ 지원" [ref=e100]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205785
+        - img "달파, 키움증권 채팅 ‘AI 모니터링’ 지원"
+      - link "달파, 키움증권 채팅 ‘AI 모니터링’ 지원" [ref=e101] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205785
+        - heading "달파, 키움증권 채팅 ‘AI 모니터링’ 지원" [ref=e102] [level=2]
+      - text: AI 에이전트 전문 달파(대표 김도균)는 키움증권의 모바일트레이딩시스템(MTS) ‘영웅문S#’ 내 새롭게 도입된 실시간 채팅형 커뮤니티에 AI 모니터링 솔루션을 공급했다고 21일 ... AI 기업 2026-01-21
+      - link "모코플렉스, AI 리뷰 자동 생성 서비스 '우리가게 스마트리뷰' 출시" [ref=e103]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205795
+        - img "모코플렉스, AI 리뷰 자동 생성 서비스 '우리가게 스마트리뷰' 출시"
+      - link "모코플렉스, AI 리뷰 자동 생성 서비스 '우리가게 스마트리뷰' 출시" [ref=e104] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205795
+        - heading "모코플렉스, AI 리뷰 자동 생성 서비스 '우리가게 스마트리뷰' 출시" [ref=e105] [level=2]
+      - text: AI 매장 관리 전문 모코플렉스(대표 박나라)는 AI 리뷰 자동 생성 서비스 '우리가게 스마트리뷰'를 출시했다고 21일 밝혔다.고품질 리뷰 데이터 기반 대형언어모델(LLM)을 활용... AI 기업 2026-01-21
+      - link "베스핀글로벌, AI 중심 조직 개편...\" [ref=e106]기업 AX 파트너 도약 목표\"":
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205791
+        - img "베스핀글로벌, AI 중심 조직 개편...\"기업 AX 파트너 도약 목표\""
+      - link "베스핀글로벌, AI 중심 조직 개편...\" [ref=e107] [nth=1]기업 AX 파트너 도약 목표\"":
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205791
+        - heading "베스핀글로벌, AI 중심 조직 개편...\" [ref=e108]기업 AX 파트너 도약 목표\"" [level=2]
+      - text: 베스핀글로벌(대표 허양호)은 AI 중심으로 조직을 개편했다고 21일 밝혔다.사업 개발과 기술 역량을 통합한 '4대 비즈니스 센터(BC)' 체계로 전환하며 AI 전담 조직인 'AI ... AI 기업 2026-01-21
+      - link "파수, KIST AI 서비스 구축…”보안 역량 결합해 공공기관 AI 사업 확대”" [ref=e109]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205786
+        - img "파수, KIST AI 서비스 구축…”보안 역량 결합해 공공기관 AI 사업 확대”"
+      - link "파수, KIST AI 서비스 구축…”보안 역량 결합해 공공기관 AI 사업 확대”" [ref=e110] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205786
+        - heading "파수, KIST AI 서비스 구축…”보안 역량 결합해 공공기관 AI 사업 확대”" [ref=e111] [level=2]
+      - text: 파수(대표 조규곤)는 온프레미스 AI 플랫폼 ‘엘름(Ellm)’에 최신 AI 및 데이터 보안 기술을 적용, 한국과학기술연구원(KIST, 원장 오상록)의 ‘AI 서비스’를 구축했다고... AI 기업 2026-01-21
+      - link "브이디로보틱스, 외골격 웨어러블 로봇 ‘하이퍼쉘’ 국내 총판 계약" [ref=e112]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205789
+        - img "브이디로보틱스, 외골격 웨어러블 로봇 ‘하이퍼쉘’ 국내 총판 계약"
+      - link "브이디로보틱스, 외골격 웨어러블 로봇 ‘하이퍼쉘’ 국내 총판 계약" [ref=e113] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205789
+        - heading "브이디로보틱스, 외골격 웨어러블 로봇 ‘하이퍼쉘’ 국내 총판 계약" [ref=e114] [level=2]
+      - text: 서비스로봇 전문 브이디로보틱스(대표 함판식)는 소비자용 외골격 로보틱스 전문 하이퍼쉘(Hypershell)과 국내 독점 총판 계약을 체결했다고 21일 밝혔다. 중국 심천 하이퍼쉘 ... AI 기업 2026-01-21
+      - link "LG CNS, ‘K-AI 신약개발 플랫폼’ 구축 사업 선정" [ref=e115]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205787
+        - img "LG CNS, ‘K-AI 신약개발 플랫폼’ 구축 사업 선정"
+      - link "LG CNS, ‘K-AI 신약개발 플랫폼’ 구축 사업 선정" [ref=e116] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205787
+        - heading "LG CNS, ‘K-AI 신약개발 플랫폼’ 구축 사업 선정" [ref=e117] [level=2]
+      - text: LG CNS(대표 현신균)는 최근 보건복지부가 추진하는 'K-AI 신약개발 전임상·임상 모델개발사업(R&D)'에 용역 기관으로 선정됐다고 21일 밝혔다.371억원이 투입되는 이번 ... AI 기업 2026-01-21
+      - link "디퍼아이, 피지컬 AI 시대에 시장 공략 가속…2026년 사업 확대 원년 선언" [ref=e118]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205784
+        - img "디퍼아이, 피지컬 AI 시대에 시장 공략 가속…2026년 사업 확대 원년 선언"
+      - link "디퍼아이, 피지컬 AI 시대에 시장 공략 가속…2026년 사업 확대 원년 선언" [ref=e119] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205784
+        - heading "디퍼아이, 피지컬 AI 시대에 시장 공략 가속…2026년 사업 확대 원년 선언" [ref=e120] [level=2]
+      - text: 엣지 AI 반도체 전문 디퍼아이가 피지컬 AI 시장 확대 흐름에 맞춰 2026년을 사업 확대의 원년으로 삼겠다고 21일 밝혔다. 피지컬 AI는 로봇·드론·산업 설비 등 물리적 환경... AI 기업 2026-01-21
+      - link "오픈AI, B2B 확대 위해 서비스나우와 계약" [ref=e121]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205775
+        - img "오픈AI, B2B 확대 위해 서비스나우와 계약"
+      - link "오픈AI, B2B 확대 위해 서비스나우와 계약" [ref=e122] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205775
+        - heading "오픈AI, B2B 확대 위해 서비스나우와 계약" [ref=e123] [level=2]
+      - text: 오픈AI가 기업용 AI 시장 확대를 위해 글로벌 엔터프라이즈 소프트웨어 기업 서비스나우와 손잡았다.오픈AI는 20일(현지시간) 서비스나우와 3년간의 전략적 파트너십을 체결하고, 기... 산업일반 2026-01-21
+      - link "한국오라클, 국내 스타트업 4개사에 클라우드 인프라 제공" [ref=e124]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205777
+        - img "한국오라클, 국내 스타트업 4개사에 클라우드 인프라 제공"
+      - link "한국오라클, 국내 스타트업 4개사에 클라우드 인프라 제공" [ref=e125] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205777
+        - heading "한국오라클, 국내 스타트업 4개사에 클라우드 인프라 제공" [ref=e126] [level=2]
+      - text: 한국오라클(대표 김성하)은 국내 스타트업 4개사에 오라클 클라우드 인프라스트럭처(OCI)를 제공한다고 21일 밝혔다.이번 프로그램은 중소벤처기업부와 창업진흥원(KISED), 서울과... AI 기업 2026-01-21 Load more articles +
+    - list
+    - button "뒤로" [ref=e127] [nth=2]
+    - button "멈춤" [ref=e128] [nth=2]
+    - button "앞으로" [ref=e129] [nth=2]
+    - list:
+      - listitem:
+        - link "플루_1920_01" [ref=e130]:
+          - /url: https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000197728
+          - img "플루_1920_01"
+    - button "뒤로" [ref=e131] [nth=3]
+    - button "멈춤" [ref=e132] [nth=3]
+    - button "앞으로" [ref=e133] [nth=3]
+    - list:
+      - listitem:
+        - link "줌톤_680_01" [ref=e134]:
+          - /url: https://www.zoomtone.co.kr/
+          - img "줌톤_680_01"
+    - button "뒤로" [ref=e135] [nth=4]
+    - button "멈춤" [ref=e136] [nth=4]
+    - button "앞으로" [ref=e137] [nth=4]
+    - article:
+      - text: 뉴스 브리핑
+      - link "[1월20일] '심슨 가족'의 랄프 위검이 AI 코딩의 대명사가 된 이유" [ref=e138]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205747
+        - heading "[1월20일] '심슨 가족'의 랄프 위검이 AI 코딩의 대명사가 된 이유" [ref=e139] [level=2]
+      - link "[1월20일] '심슨 가족'의 랄프 위검이 AI 코딩의 대명사가 된 이유" [ref=e140] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205747
+        - img "[1월20일] '심슨 가족'의 랄프 위검이 AI 코딩의 대명사가 된 이유"
+      - text: AI WEBTOON
+      - 'link "[AI웹툰] 사랑하면그사람이된다 : 9화"':
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205689
+        - 'heading "[AI웹툰] 사랑하면그사람이된다 : 9화" [level=2]'
+      - 'link "[AI웹툰] 사랑하면그사람이된다 : 9화"':
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205689
+        - 'img "[AI웹툰] 사랑하면그사람이된다 : 9화"'
+      - text: 기고
+      - link "[AI의 역사] 101 상상을 넘어 현실의 몸을 입는 고희의 AI – 100회의 여정을 마치며" [ref=e141]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205678
+        - heading "[AI의 역사] 101 상상을 넘어 현실의 몸을 입는 고희의 AI – 100회의 여정을 마치며" [ref=e142] [level=2]
+      - link "[AI의 역사] 101 상상을 넘어 현실의 몸을 입는 고희의 AI – 100회의 여정을 마치며" [ref=e143] [nth=1]:
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205678
+        - img "[AI의 역사] 101 상상을 넘어 현실의 몸을 입는 고희의 AI – 100회의 여정을 마치며"
+      - text: 칼럼
+      - 'link "[내면 지도 그리기] 01 Inner Mapping: 나를 찾는 지도"':
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205682
+        - 'heading "[내면 지도 그리기] 01 Inner Mapping: 나를 찾는 지도" [level=2]'
+      - 'link "[내면 지도 그리기] 01 Inner Mapping: 나를 찾는 지도"':
+        - /url: https://www.aitimes.com/news/articleView.html?idxno=205682
+        - 'img "[내면 지도 그리기] 01 Inner Mapping: 나를 찾는 지도"'
+    - article:
+      - link "All article View All +" [ref=e144]:
+        - /url: https://www.aitimes.com/news/articleList.html?view_type=sm
+    - list:
+      - listitem: 뉴스 브리핑
+      - listitem: AI Made
+      - listitem: Local
+      - listitem: Future Energy
+      - listitem: AI WEBTOON
+    - toolbar:
+      - listbox "slide" [ref=e145] [nth=1]:
+        - option "[1월20일] '심슨 가족'의 랄프 위검이 AI 코딩의 대명사가 된 이유 [1월20일] '심슨 가족'의 랄프 위검이 AI 코딩의 대명사가 된 이유" [ref=e146]:
+          - link "[1월20일] '심슨 가족'의 랄프 위검이 AI 코딩의 대명사가 된 이유" [ref=e147] [nth=2]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205747
+            - img "[1월20일] '심슨 가족'의 랄프 위검이 AI 코딩의 대명사가 된 이유"
+          - link "[1월20일] '심슨 가족'의 랄프 위검이 AI 코딩의 대명사가 된 이유" [ref=e148] [nth=3]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205747
+            - heading "[1월20일] '심슨 가족'의 랄프 위검이 AI 코딩의 대명사가 된 이유" [ref=e149] [nth=1] [level=2]
+        - option "[1월19일] 오픈AI에 대한 강력한 경고...\" [ref=e150]IPO 실패하면 2027년 다른 기업에 인수될 것\" [1월19일] 오픈AI에 대한 강력한 경고...\"IPO 실패하면 2027년 다른 기업에 인수될 것\"":
+          - link "[1월19일] 오픈AI에 대한 강력한 경고...\" [ref=e151] [nth=1]IPO 실패하면 2027년 다른 기업에 인수될 것\"":
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205709
+            - img "[1월19일] 오픈AI에 대한 강력한 경고...\"IPO 실패하면 2027년 다른 기업에 인수될 것\""
+          - link "[1월19일] 오픈AI에 대한 강력한 경고...\" [ref=e152] [nth=2]IPO 실패하면 2027년 다른 기업에 인수될 것\"":
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205709
+            - heading "[1월19일] 오픈AI에 대한 강력한 경고...\" [ref=e153] [nth=1]IPO 실패하면 2027년 다른 기업에 인수될 것\"" [level=2]
+        - option "[1월16일] AI가 주는 2가지 착각...'자신감 상실'과 '전문성의 환상' [1월16일] AI가 주는 2가지 착각...'자신감 상실'과 '전문성의 환상'" [ref=e154]:
+          - link "[1월16일] AI가 주는 2가지 착각...'자신감 상실'과 '전문성의 환상'" [ref=e155]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205638
+            - img "[1월16일] AI가 주는 2가지 착각...'자신감 상실'과 '전문성의 환상'"
+          - link "[1월16일] AI가 주는 2가지 착각...'자신감 상실'과 '전문성의 환상'" [ref=e156] [nth=1]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205638
+            - heading "[1월16일] AI가 주는 2가지 착각...'자신감 상실'과 '전문성의 환상'" [ref=e157] [level=2]
+      - tablist:
+        - tab [ref=e158] [selected]
+    - emphasis: 01 / 05
+    - button "prev" [ref=e159]
+    - button "next" [ref=e160]
+    - toolbar:
+      - listbox "slide" [ref=e161] [nth=2]:
+        - option "노벨상 수상자의 ‘3억 뷰’를 기록한 다큐멘터리 노벨상 수상자의 ‘3억 뷰’를 기록한 다큐멘터리" [ref=e162]:
+          - link "노벨상 수상자의 ‘3억 뷰’를 기록한 다큐멘터리" [ref=e163]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205770
+            - img "노벨상 수상자의 ‘3억 뷰’를 기록한 다큐멘터리"
+          - link "노벨상 수상자의 ‘3억 뷰’를 기록한 다큐멘터리" [ref=e164] [nth=1]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205770
+            - heading "노벨상 수상자의 ‘3억 뷰’를 기록한 다큐멘터리" [ref=e165] [level=2]
+        - option "‘겨우 1초’ 순식간에 고품질 이미지 생성하는 AI 소형 모델 ‘겨우 1초’ 순식간에 고품질 이미지 생성하는 AI 소형 모델" [ref=e166]:
+          - link "‘겨우 1초’ 순식간에 고품질 이미지 생성하는 AI 소형 모델" [ref=e167]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205731
+            - img "‘겨우 1초’ 순식간에 고품질 이미지 생성하는 AI 소형 모델"
+          - link "‘겨우 1초’ 순식간에 고품질 이미지 생성하는 AI 소형 모델" [ref=e168] [nth=1]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205731
+            - heading "‘겨우 1초’ 순식간에 고품질 이미지 생성하는 AI 소형 모델" [ref=e169] [level=2]
+        - option "테슬라, FSD를 구독제로… 한달에 이 가격? 테슬라, FSD를 구독제로… 한달에 이 가격?" [ref=e170]:
+          - link "테슬라, FSD를 구독제로… 한달에 이 가격?" [ref=e171] [nth=1]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205667
+            - img "테슬라, FSD를 구독제로… 한달에 이 가격?"
+          - link "테슬라, FSD를 구독제로… 한달에 이 가격?" [ref=e172] [nth=2]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205667
+            - heading "테슬라, FSD를 구독제로… 한달에 이 가격?" [ref=e173] [nth=1] [level=2]
+      - tablist:
+        - tab [ref=e174] [nth=1] [selected]
+    - emphasis: 01 / 05
+    - button "prev" [ref=e175] [nth=1]
+    - button "next" [ref=e176] [nth=1]
+    - toolbar:
+      - listbox "slide" [ref=e177] [nth=3]:
+        - option "해남 땅끝희망공원 아트월, 희망·소통 디자인으로 지역 품격 높여 해남 땅끝희망공원 아트월, 희망·소통 디자인으로 지역 품격 높여" [ref=e178]:
+          - link "해남 땅끝희망공원 아트월, 희망·소통 디자인으로 지역 품격 높여" [ref=e179]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205756
+            - img "해남 땅끝희망공원 아트월, 희망·소통 디자인으로 지역 품격 높여"
+          - link "해남 땅끝희망공원 아트월, 희망·소통 디자인으로 지역 품격 높여" [ref=e180] [nth=1]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205756
+            - heading "해남 땅끝희망공원 아트월, 희망·소통 디자인으로 지역 품격 높여" [ref=e181] [level=2]
+        - option "광주, 제조·헬스케어 AI 기업 9곳과 353~361번째 업무협약 광주, 제조·헬스케어 AI 기업 9곳과 353~361번째 업무협약" [ref=e182]:
+          - link "광주, 제조·헬스케어 AI 기업 9곳과 353~361번째 업무협약" [ref=e183]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205674
+            - img "광주, 제조·헬스케어 AI 기업 9곳과 353~361번째 업무협약"
+          - link "광주, 제조·헬스케어 AI 기업 9곳과 353~361번째 업무협약" [ref=e184] [nth=1]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205674
+            - heading "광주, 제조·헬스케어 AI 기업 9곳과 353~361번째 업무협약" [ref=e185] [level=2]
+        - option "제155회 광양만권경제자유구역 조합회의 개최...2026년 업무계획 청취 제155회 광양만권경제자유구역 조합회의 개최...2026년 업무계획 청취" [ref=e186]:
+          - link "제155회 광양만권경제자유구역 조합회의 개최...2026년 업무계획 청취" [ref=e187]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205675
+            - img "제155회 광양만권경제자유구역 조합회의 개최...2026년 업무계획 청취"
+          - link "제155회 광양만권경제자유구역 조합회의 개최...2026년 업무계획 청취" [ref=e188] [nth=1]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205675
+            - heading "제155회 광양만권경제자유구역 조합회의 개최...2026년 업무계획 청취" [ref=e189] [level=2]
+      - tablist:
+        - tab [ref=e190] [nth=2] [selected]
+    - emphasis: 01 / 05
+    - button "prev" [ref=e191] [nth=2]
+    - button "next" [ref=e192] [nth=2]
+    - toolbar:
+      - listbox "slide" [ref=e193] [nth=4]:
+        - option "농업 지키며 전기 생산…'영농태양광' 제도화 입법 추진 농업 지키며 전기 생산…'영농태양광' 제도화 입법 추진" [ref=e194]:
+          - link "농업 지키며 전기 생산…'영농태양광' 제도화 입법 추진" [ref=e195]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205646
+            - img "농업 지키며 전기 생산…'영농태양광' 제도화 입법 추진"
+          - link "농업 지키며 전기 생산…'영농태양광' 제도화 입법 추진" [ref=e196] [nth=1]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205646
+            - heading "농업 지키며 전기 생산…'영농태양광' 제도화 입법 추진" [ref=e197] [level=2]
+        - option "최재관 에너지공단 이사장, \" [ref=e198]재생E 보급 확대 집중\" 최재관 에너지공단 이사장, \"재생E 보급 확대 집중\"":
+          - link "최재관 에너지공단 이사장, \" [ref=e199]재생E 보급 확대 집중\"":
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205645
+            - img "최재관 에너지공단 이사장, \"재생E 보급 확대 집중\""
+          - link "최재관 에너지공단 이사장, \" [ref=e200] [nth=1]재생E 보급 확대 집중\"":
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205645
+            - heading "최재관 에너지공단 이사장, \" [ref=e201]재생E 보급 확대 집중\"" [level=2]
+        - option "재생에너지, 지역의 소득이 되다…햇빛과 바람, 미래 성장의 자산 재생에너지, 지역의 소득이 되다…햇빛과 바람, 미래 성장의 자산" [ref=e202]:
+          - link "재생에너지, 지역의 소득이 되다…햇빛과 바람, 미래 성장의 자산" [ref=e203]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205605
+            - img "재생에너지, 지역의 소득이 되다…햇빛과 바람, 미래 성장의 자산"
+          - link "재생에너지, 지역의 소득이 되다…햇빛과 바람, 미래 성장의 자산" [ref=e204] [nth=1]:
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205605
+            - heading "재생에너지, 지역의 소득이 되다…햇빛과 바람, 미래 성장의 자산" [ref=e205] [level=2]
+      - tablist:
+        - tab [ref=e206] [nth=3] [selected]
+    - emphasis: 01 / 05
+    - button "prev" [ref=e207] [nth=3]
+    - button "next" [ref=e208] [nth=3]
+    - toolbar:
+      - listbox "slide" [ref=e209] [nth=5]:
+        - 'option "[AI웹툰] 사랑하면그사람이된다 : 9화 [AI웹툰] 사랑하면그사람이된다 : 9화"':
+          - 'link "[AI웹툰] 사랑하면그사람이된다 : 9화"':
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205689
+            - 'img "[AI웹툰] 사랑하면그사람이된다 : 9화"'
+          - 'link "[AI웹툰] 사랑하면그사람이된다 : 9화"':
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205689
+            - 'heading "[AI웹툰] 사랑하면그사람이된다 : 9화" [level=2]'
+        - 'option "[AI웹툰] 사랑하면그사람이된다 : 8화 [AI웹툰] 사랑하면그사람이된다 : 8화"':
+          - 'link "[AI웹툰] 사랑하면그사람이된다 : 8화"':
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205469
+            - 'img "[AI웹툰] 사랑하면그사람이된다 : 8화"'
+          - 'link "[AI웹툰] 사랑하면그사람이된다 : 8화"':
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205469
+            - 'heading "[AI웹툰] 사랑하면그사람이된다 : 8화" [level=2]'
+        - 'option "[AI웹툰] 사랑하면그사람이된다 : 7화 [AI웹툰] 사랑하면그사람이된다 : 7화"':
+          - 'link "[AI웹툰] 사랑하면그사람이된다 : 7화"':
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205249
+            - 'img "[AI웹툰] 사랑하면그사람이된다 : 7화"'
+          - 'link "[AI웹툰] 사랑하면그사람이된다 : 7화"':
+            - /url: https://www.aitimes.com/news/articleView.html?idxno=205249
+            - 'heading "[AI웹툰] 사랑하면그사람이된다 : 7화" [level=2]'
+      - tablist:
+        - tab [ref=e210] [nth=4] [selected]
+    - emphasis: 01 / 05
+    - button "prev" [ref=e211] [nth=4]
+    - button "next" [ref=e212] [nth=4]
+  - contentinfo:
+    - img "AI타임스"
+    - list:
+      - listitem: "주소: 서울특별시 영등포구 당산로41길 11, 431호(당산 SK V1 센터)"
+      - listitem: "| 대표전화: 02-2655-2663"
+      - listitem
+      - listitem: "팩스: 02-2655-2664"
+      - listitem: "| 등록번호: 서울 아 04551"
+      - listitem: "| 등록일: 2017-06-01"
+      - listitem
+      - listitem: "최초발행일: 2017-06-01"
+      - listitem: "| 발행인: 박상용"
+      - listitem: "| 편집인: 전동희"
+      - listitem: "| 청소년보호책임자: 전동희"
+    - text: More From
+    - list:
+      - listitem:
+        - link "개인정보처리방침" [ref=e213]:
+          - /url: https://www.aitimes.com/com/privacy.html
+      - listitem:
+        - link "매체소개" [ref=e214]:
+          - /url: https://www.aitimes.com/com/com-1.html
+      - listitem:
+        - link "이용약관" [ref=e215]:
+          - /url: https://www.aitimes.com/com/service.html
+      - listitem:
+        - link "기사제보" [ref=e216] [nth=1]:
+          - /url: https://www.aitimes.com/com/jb.html
+      - listitem:
+        - link "청소년보호정책" [ref=e217]:
+          - /url: https://www.aitimes.com/com/youthpolicy.html
+      - listitem:
+        - link "광고문의" [ref=e218]:
+          - /url: https://www.aitimes.com/com/ad.html
+      - listitem:
+        - link "저작권보호정책" [ref=e219]:
+          - /url: https://www.aitimes.com/com/copyright.html
+      - listitem:
+        - link "이메일무단수집거부" [ref=e220]:
+          - /url: https://www.aitimes.com/com/emailno.html
+    - text: C
+    - link "o" [ref=e221]:
+      - /url: https://www.aitimes.com/admin/adminLoginForm.html
+    - text: pyright by AI타임스
+    - link "All" [ref=e222]:
+      - /url: https://www.aitimes.com/index.html
+    - text: rights reserved.
+    - link "ND소프트" [ref=e223]:
+      - /url: https://www.ndsoft.co.kr/
+      - img "ND소프트"
+  - img
